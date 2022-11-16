@@ -1,6 +1,9 @@
 import { Component } from "@angular/core";
 
-@Component()
+@Component({
+  selector:'app-header',
+  templateUrl:'./header.component.html'
+})
 export class HeaderComponent {
 
 }
@@ -9,3 +12,4 @@ export class HeaderComponent {
 // component is a ts class
 // needs decorator to be recognised a component
 // decorator needs import from ang/core
+// configure decorator
