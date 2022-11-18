@@ -19,3 +19,6 @@ export class RecipeListComponent implements OnInit {
   }
 
 }
+
+//using the recipe model we made , in the list now
+//to display the model, use template of recipe comp

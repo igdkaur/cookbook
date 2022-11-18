@@ -4,9 +4,9 @@
   </div>
 </div>
 <hr>
-<div class="row">
-  <div class="col-xs-12">
-    <a href="#" class="list-group-item clearfix" *ngFor = "let recipe of recipes">
+ <div class="row"> <!--holds list of recipes -->
+  <div class="col-xs-12"> <!--list comp is nested in md 5 col width -->
+    <a href="#" class="list-group-item clearfix" *ngFor = "let recipe of recipes"> <!--recipes property in ts file -->
     <div class="pull-left">
       <h4 class="list-group-item-heading">{{recipe.name}}</h4>
       <p class="list-group-item-text"> {{recipe.description}}</p>
@@ -15,9 +15,12 @@
         <img src="{{recipe.imagePath}}" alt = "{{recipe.name}}" class="img-responsive" style="max-height: 50px;">
     </span>
   </a>
-  <app-recipe-item></app-recipe-item>
+  <app-recipe-item></app-recipe-item> 
   </div>
 </div>
 
 
 
+<!-- initially we were o/p only recipe item, obvsly need to loop thru all recipes -->
+<!--getting recipe data data down to recipe item ??? -->
+<!--meanwhile adding data for single recipe in this list only-->
