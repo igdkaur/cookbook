@@ -1,10 +1,10 @@
 <!-- testing bootstrap -->
-<app-header></app-header>
+<app-header (selectedComponent) = "onNavigate($event)"></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipes></app-recipes>
-      <app-shopping-list> </app-shopping-list>
+      <app-recipes *ngIf="selectedComponent === 'recipe'"></app-recipes>
+      <app-shopping-list *ngIf="selectedComponent !== 'recipe'"> </app-shopping-list>
     </div>
   </div>
 </div>
@@ -17,3 +17,18 @@ want components to communicate with each other
 so that we can actually store the content of the items in our recipe list in their own component,
 
 that we can select the recipe here and load it in the detail section -->
+
+
+<!-- can navigate btw recipes and shopping list,
+can select recipes here
+and load them in the details section. -->
+
+<!-- navigation to either load recipes or the shopping list. -->
+
+<!-- in app component ( where we include both) 
+need to manage which one should be displayed in the header component.
+pass the information which link was clicked, to app component
+so that can then switch a property there to only display one of these two components. -->
+
+<!-- umm...
+emitting event in the header -> which component to be displayed in app component. -->
