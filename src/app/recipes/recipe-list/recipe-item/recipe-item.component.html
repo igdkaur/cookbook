@@ -1,5 +1,6 @@
 <a href="#" 
    class="list-group-item clearfix" 
+   (click)="onRecipeSelect()"
    > <!--recipes property in ts file -->
     <div class="pull-left">
       <h4 class="list-group-item-heading">{{recipe.name}}</h4>
@@ -16,3 +17,6 @@
 the individual recipe of each iteration
 to that component, so that we can still output
 recipe name -->
+
+<!-- when  recipe is clicked
+emit event, inform parent -->
