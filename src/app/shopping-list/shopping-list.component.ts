@@ -16,7 +16,10 @@ export class ShoppingListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-}
+  onIngredientAdded(ingredient:Ingredient) {
+    this.ingredients.push(ingredient);
+  }
+ }
 
 // recipe model - recipe folder
 // but ingredient model - shared folder
