@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'cookbook';
 
-  selectedComponent = 'recipe';
+  displayedComponent = 'recipe';
   onNavigate(component:string) {
-    this.selectedComponent = component;
+    this.displayedComponent = component;
   }
 }
