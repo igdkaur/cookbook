@@ -18,7 +18,7 @@
    appDropdown>
     <button type="button" class="btn btn-primary dropdown-toggle">Manage Recipe  <span class="caret"> </span></button>
     <ul class="dropdown-menu">
-      <li><a href="#">Add</a></li>
+      <li><a href="#" (click)="onAddToSl()" >Add To Shopping List</a></li>
       <li><a href="#">Edit</a></li>
       <li><a href="#">Delete</a></li>
     </ul>
@@ -27,7 +27,7 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-    Description
+    {{ recipe.description }}
   </div>
 </div>
 <div class="row">
