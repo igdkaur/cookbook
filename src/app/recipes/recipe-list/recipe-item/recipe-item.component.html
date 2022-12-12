@@ -1,6 +1,6 @@
 <a href="#" 
    class="list-group-item clearfix" 
-   (click)="onRecipeSelect()"
+   (click)="onRecipeSelect()" 
    > <!--recipes property in ts file -->
     <div class="pull-left">
       <h4 class="list-group-item-heading">{{recipe.name}}</h4>
@@ -20,3 +20,8 @@ recipe name -->
 
 <!-- when  recipe is clicked
 emit event, inform parent -->
+
+<!-- #811
+directly inform the recipe detail component -->
+
+<!-- not emit event, call method in serivce, that transfers data -->

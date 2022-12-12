@@ -6,10 +6,14 @@
 <hr>
  <div class="row"> <!--holds list of recipes -->
   <div class="col-xs-12"> <!--list comp is nested in md 5 col width -->
-  <app-recipe-item 
+  <!-- <app-recipe-item 
     *ngFor = "let recipeEl of recipes"
     [recipe]="recipeEl"
-    (selectedRecipe)=" onRecipeSelected(recipeEl)"></app-recipe-item> 
+    (selectedRecipe)=" onRecipeSelected(recipeEl)"></app-recipe-item>  -->
+    <app-recipe-item 
+    *ngFor = "let recipeEl of recipes"
+    [recipe]="recipeEl"
+    ></app-recipe-item> 
   </div>
 </div>
 
