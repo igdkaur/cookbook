@@ -10,3 +10,9 @@ export class RecipeService {
     return this.recipes.slice();
   }
 }
+
+
+// manage our recipes here
+// move recipe property in service
+// make it private, add method to acs recipes 
+// make sure not to return direct acs
