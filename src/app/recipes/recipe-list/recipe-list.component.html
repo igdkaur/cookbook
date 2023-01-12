@@ -11,8 +11,9 @@
     [recipe]="recipeEl"
     (selectedRecipe)=" onRecipeSelected(recipeEl)"></app-recipe-item>  -->
     <app-recipe-item 
-    *ngFor = "let recipeEl of recipes"
+    *ngFor = "let recipeEl of recipes; let i = index"
     [recipe]="recipeEl"
+    [index] = "i"
     ></app-recipe-item> 
   </div>
 </div>
@@ -27,3 +28,6 @@
 because if we would outsource it to the recipe item component 
 we couldn't pass our recipe in this loop of recipes to that component.
 So that cross component communication is a huge issue right now. -->
+
+<!-- 261
+pass index along with recipe -->

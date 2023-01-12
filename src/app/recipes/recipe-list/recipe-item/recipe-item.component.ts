@@ -8,7 +8,9 @@ import { RecipeService } from '../../recipe.service';
   styleUrls: ['./recipe-item.component.css']
 })
 export class RecipeItemComponent implements OnInit {
-  @Input() recipe: Recipe;
+  @Input() recipe: Recipe;  
+  @Input() index: number;
+
 
   // constructor(private recipeService:RecipeService) { }
 
@@ -23,3 +25,4 @@ export class RecipeItemComponent implements OnInit {
 
 //#811 - select an item 
 //remove o/p, eventemitter
+//# 261 pass index from recipe list component 
