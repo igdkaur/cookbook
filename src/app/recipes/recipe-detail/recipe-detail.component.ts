@@ -30,3 +30,6 @@ export class RecipeDetailComponent implements OnInit {
     this.recipeService.addIngredientsToSL(this.recipe.ingredients)
   }
 }
+
+// get single recipe,
+//get id from router
