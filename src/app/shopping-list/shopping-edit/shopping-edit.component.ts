@@ -15,6 +15,10 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   editMode = false;
   editItemIndex: number;
+  editedItem: Ingredient;
+  @ViewChild('f',{static:false}) slForm: NgForm;
+
+
   //addedIngredient = new EventEmitter<{name:string,amount:number}>();
   // @Output() addedIngredient = new EventEmitter<Ingredient>();
   constructor(private slService: ShoppingListService) { }
@@ -24,7 +28,12 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
       .subscribe(
         (index: number) => {
           this.editItemIndex = index;
-          this.editMode = true; 
+          this.editMode = true;
+          this.editedItem = this.slService.getIngredient(index); 
+          this.slForm.setValue({
+            name: this.editedItem.name,
+            amount: this.editedItem.amount
+          })
         }
       )
     };
