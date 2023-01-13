@@ -1,5 +1,6 @@
-import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Subscription } from 'rxjs';
 import { Ingredient } from 'src/app/shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list.service';
 
@@ -8,15 +9,28 @@ import { ShoppingListService } from '../shopping-list.service';
   templateUrl: './shopping-edit.component.html',
   styleUrls: ['./shopping-edit.component.css']
 })
-export class ShoppingEditComponent implements OnInit {
+export class ShoppingEditComponent implements OnInit, OnDestroy {
   @ViewChild('nameInput',{static:false}) nameInputRef: ElementRef;
   @ViewChild('amountInput',{static:false}) amountInputRef: ElementRef;
-  
+  subscription: Subscription;
+  editMode = false;
+  editItemIndex: number;
   //addedIngredient = new EventEmitter<{name:string,amount:number}>();
   // @Output() addedIngredient = new EventEmitter<Ingredient>();
   constructor(private slService: ShoppingListService) { }
 
   ngOnInit(): void {
+    this.subscription = this.slService.startedEditing
+      .subscribe(
+        (index: number) => {
+          this.editItemIndex = index;
+          this.editMode = true; 
+        }
+      )
+    };
+  
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   // onAdd() {

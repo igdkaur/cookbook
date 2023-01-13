@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingListService } from './shopping-list.service';
 
@@ -17,6 +17,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   ingredients: Ingredient[];
   private igChangeSub: Subscription;
 
+  
   constructor(private slService: ShoppingListService) { }
 
   ngOnInit(): void {
@@ -34,6 +35,10 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   // onIngredientAdded(ingredient:Ingredient) {
   //   this.ingredients.push(ingredient);
   // }
+
+  onEditItem(index: number) {
+    this.slService.startedEditing.next(index)
+  }
  }
 
 // recipe model - recipe folder
