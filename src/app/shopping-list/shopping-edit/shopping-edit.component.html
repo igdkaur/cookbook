@@ -31,7 +31,7 @@
           <button 
             class="btn btn-success" 
             type="submit"
-            [disabled]="!f.valid" >Add</button>
+            [disabled]="!f.valid" >{{editMode ? 'Update' : 'Add'}}</button>
           <button class="btn btn-danger" type="button">Delete</button>
           <button class="btn btn-primary" type="button">Clear</button>
         </div>
@@ -43,3 +43,4 @@
 
 
 <!-- add items to list - local ref + viewChild -->
+<!-- not add at all times but save -->
